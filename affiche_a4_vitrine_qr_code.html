@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Affiche A4 Vitrine - L'ami du Pain</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: #f4efe9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .poster-a4 {
+      width: 210mm;
+      height: 297mm;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16mm 18mm;
+      border: 1px solid #e0d5c7;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .poster-a4 {
+        border: none;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+        page-break-after: always;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+    /* Brand Header */
+    .header {
+      text-align: center;
+      border-bottom: 3px solid #C86D3B;
+      padding-bottom: 6mm;
+    }
+    .badge-halal {
+      display: inline-block;
+      background: #eaf5ee;
+      color: #1b6837;
+      border: 1px solid #b7dfc3;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .logo-title {
+      font-size: 38px;
+      font-weight: 900;
+      color: #2C1810;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .logo-subtitle {
+      font-size: 16px;
+      color: #79665B;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Hero Catchphrase */
+    .hero {
+      text-align: center;
+      margin: 6mm 0;
+    }
+    .hero-pill {
+      display: inline-block;
+      background: #C86D3B;
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 10px;
+    }
+    .hero-h1 {
+      font-size: 32px;
+      font-weight: 900;
+      color: #2C1810;
+      line-height: 1.2;
+    }
+    .hero-h1 span {
+      color: #C86D3B;
+      text-decoration: underline;
+      text-decoration-color: #E5A93C;
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: #55443a;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    /* QR Code Card */
+    .qr-card {
+      background: #FDFBF7;
+      border: 2px dashed #C86D3B;
+      border-radius: 24px;
+      padding: 8mm 6mm;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(200, 109, 59, 0.08);
+      margin: 4mm 0;
+    }
+    .qr-container {
+      display: inline-block;
+      background: #FFFFFF;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid #ecdcd0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .qr-caption {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 900;
+      color: #2C1810;
+    }
+    .qr-subcaption {
+      font-size: 13px;
+      color: #79665B;
+      margin-top: 3px;
+    }
+
+    /* 3 Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 4mm 0;
+    }
+    .step-box {
+      background: #fbf8f4;
+      border: 1px solid #ebdccc;
+      border-radius: 16px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: #C86D3B;
+      color: #FFFFFF;
+      font-weight: 900;
+      font-size: 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 6px auto;
+    }
+    .step-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #2C1810;
+      margin-bottom: 2px;
+    }
+    .step-desc {
+      font-size: 11px;
+      color: #6d5b51;
+      line-height: 1.3;
+    }
+
+    /* Menu Teaser */
+    .menu-teaser {
+      background: #2C1810;
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+    .teaser-item h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #E5A93C;
+      margin-bottom: 2px;
+    }
+    .teaser-item p {
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      border-top: 1px solid #ebdccc;
+      padding-top: 4mm;
+      font-size: 11px;
+      color: #8c776c;
+      font-weight: 500;
+    }
+    .print-btn-bar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .btn-print {
+      background: #C86D3B;
+      color: #FFF;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn-bar no-print">
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimer cette Affiche A4</button>
+  </div>
+
+  <div class="poster-a4">
+    <!-- Header -->
+    <div class="header">
+      <div class="badge-halal">حلال • VIANDES 100% HALAL CERTIFIÉES</div>
+      <div class="logo-title">🥖 L'ami du Pain</div>
+      <div class="logo-subtitle">Boulangerie Artisanale & Sandwicherie Gourmande</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-pill">⚡ Spécial Rush du Midi</div>
+      <h1 class="hero-h1">Ne faites plus la queue,<br><span>commandez en 30 secondes !</span></h1>
+      <p class="hero-sub">Vos sandwichs préparés à la minute dans notre pain croustillant.</p>
+    </div>
+
+    <!-- QR Code Card -->
+    <div class="qr-card">
+      <div class="qr-container">
+        <!-- SVG Vectoriel Authentique Scannable vers https://younesah15.github.io/ma-boulangerie/?view=client -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" width="200" height="200" shape-rendering="crispEdges">
+          <path fill="#FFFFFF" d="M0 0h35v35H0z"/>
+          <path stroke="#2C1810" d="M1 1.5h7m3 0h1m1 0h2m2 0h2m1 0h2m1 0h2m2 0h7M1 2.5h1m5 0h1m2 0h1m1 0h6m1 0h1m1 0h1m1 0h1m3 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h4m1 0h1m2 0h1m4 0h2m3 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m3 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m2 0h7m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h1m2 0h2m1 0h3m9 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m4 0h2m2 0h1m1 0h4M1 9.5h1m1 0h5m2 0h1m1 0h1m1 0h3m1 0h1m1 0h1m2 0h3m1 0h5M2 10.5h5m4 0h3m5 0h4m1 0h1m2 0h2m1 0h2m1 0h1M1 11.5h3m3 0h1m3 0h1m1 0h1m2 0h2m3 0h1m1 0h1m1 0h2m2 0h1m1 0h2M1 12.5h3m4 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h3m1 0h1m1 0h2m1 0h3m1 0h1M2 13.5h1m1 0h5m9 0h1m4 0h4m1 0h3M6 14.5h1m6 0h1m1 0h8m1 0h2m1 0h1m2 0h1m1 0h2M7 15.5h1m2 0h2m3 0h1m3 0h1m1 0h2m3 0h5m1 0h1M1 16.5h1m2 0h2m4 0h1m4 0h1m1 0h1m1 0h2m1 0h2m2 0h2m1 0h3M3 17.5h1m2 0h3m5 0h1m3 0h1m4 0h1m1 0h2m1 0h3m2 0h1M2 18.5h2m1 0h1m3 0h3m2 0h1m2 0h2m1 0h2m2 0h1m1 0h3m1 0h2m1 0h1M1 19.5h3m3 0h2m2 0h3m1 0h4m3 0h1m3 0h1m1 0h2m1 0h2M10 20.5h2m3 0h2m2 0h5m2 0h1m1 0h5M1 21.5h1m1 0h3m1 0h2m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h2m1 0h3m1 0h2M1 22.5h1m1 0h2m1 0h1m1 0h1m1 0h3m3 0h1m3 0h2m2 0h1m1 0h2m2 0h2m1 0h1M1 23.5h1m2 0h2m1 0h2m3 0h2m1 0h3m3 0h2m4 0h1m2 0h3M1 24.5h1m2 0h2m2 0h2m1 0h2m1 0h3m4 0h2m2 0h2m1 0h1m1 0h2M1 25.5h1m3 0h3m1 0h2m1 0h1m2 0h2m1 0h1m1 0h1m3 0h6m3 0h1M9 26.5h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h4m3 0h1m1 0h1m1 0h1M1 27.5h7m2 0h3m1 0h3m4 0h5m1 0h1m1 0h1m1 0h1M1 28.5h1m5 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m1 0h5m3 0h4M1 29.5h1m1 0h3m1 0h1m1 0h2m8 0h1m1 0h1m1 0h1m1 0h6M1 30.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m2 0h1m3 0h1m1 0h2m1 0h2M1 31.5h1m1 0h3m1 0h1m1 0h3m2 0h2m2 0h2m1 0h2m1 0h1m2 0h2m2 0h1M1 32.5h1m5 0h1m4 0h3m2 0h1m1 0h5m5 0h3M1 33.5h7m1 0h1m3 0h1m4 0h2m1 0h1m2 0h2m1 0h2m3 0h1"/>
+        </svg>
+      </div>
+      <div class="qr-caption">📱 Scannez avec votre smartphone</div>
+      <div class="qr-subcaption">Ou rendez-vous sur : <strong style="color:#C86D3B">younesah15.github.io/ma-boulangerie/?view=client</strong></div>
+    </div>
+
+    <!-- 3 Simple Steps -->
+    <div class="steps-grid">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <div class="step-title">Flashez & Choisissez</div>
+        <div class="step-desc">Composez votre sandwich, sauces et crudités en 3 clics.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <div class="step-title">Indiquez votre prénom</div>
+        <div class="step-desc">Réglez simplement au comptoir (espèces ou CB) au retrait.</div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <div class="step-title">Retrait express</div>
+        <div class="step-desc">Votre prénom est appelé. Récupérez votre sachet prêt !</div>
+      </div>
+    </div>
+
+    <!-- Menu Teaser -->
+    <div class="menu-teaser">
+      <div class="teaser-item">
+        <h4>Sandwich Seul</h4>
+        <p>Dès 2,80 €</p>
+      </div>
+      <div style="font-size: 20px; color: #E5A93C;">•</div>
+      <div class="teaser-item">
+        <h4>Formule Boisson 33cl</h4>
+        <p>Dès 3,80 €</p>
+      </div>
+      <div style="font-size: 20px; color: #E5A93C;">•</div>
+      <div class="teaser-item">
+        <h4>Formule Complète + Pâtisserie</h4>
+        <p>Dès 5,80 €</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      L'ami du Pain • Sandwicherie Artisanale • Prise de commande rapide pour personnes pressées !
+    </div>
+  </div>
+
+</body>
+</html>

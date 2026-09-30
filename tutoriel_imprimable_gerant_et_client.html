@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Guide d'Utilisation Imprimable - Client, Restaurateur & Gérant</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background: #f5f2eb;
+      color: #2C1810;
+      padding: 20px;
+    }
+    .page-sheet {
+      width: 210mm;
+      min-height: 297mm;
+      background: #fff;
+      margin: 0 auto 30px auto;
+      padding: 16mm 18mm;
+      border: 1px solid #dcd3c7;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .page-sheet {
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+        padding: 0;
+        margin: 0;
+        page-break-after: always;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+    .print-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .btn-print {
+      background: #C86D3B;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .doc-header {
+      border-bottom: 2px solid #C86D3B;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .doc-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: #2C1810;
+    }
+    .doc-badge {
+      background: #C86D3B;
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 12px;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #C86D3B;
+      margin: 16px 0 8px 0;
+      border-left: 4px solid #C86D3B;
+      padding-left: 8px;
+    }
+    .card-step {
+      background: #fdfbf7;
+      border: 1px solid #ebdccc;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    .card-step-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .step-badge {
+      background: #2C1810;
+      color: white;
+      font-size: 11px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .card-step-body {
+      font-size: 12px;
+      line-height: 1.45;
+      color: #55443a;
+    }
+    .tip-box {
+      background: #eaf5ee;
+      border: 1px solid #b7dfc3;
+      color: #1b6837;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      margin-top: 14px;
+      line-height: 1.4;
+    }
+    .footer-note {
+      position: absolute;
+      bottom: 12mm;
+      left: 18mm;
+      right: 18mm;
+      text-align: center;
+      font-size: 11px;
+      color: #998579;
+      border-top: 1px solid #ebdccc;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar no-print">
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimer les 3 Fiches Pratiques (A4)</button>
+  </div>
+
+  <!-- FICHE 1 : GUIDE GÉRANT (DIRECTION & CAISSE) -->
+  <div class="page-sheet">
+    <div class="doc-header">
+      <div>
+        <div class="doc-title">👑 L'ami du Pain • Guide Gérant</div>
+        <div style="font-size: 13px; color: #79665B;">Pilotage de la caisse, recettes, ruptures et paramètres</div>
+      </div>
+      <div class="doc-badge" style="background: #2C1810;">Espace Gérant</div>
+    </div>
+
+    <div class="section-title">1. Suivi des Chiffres de Vente (Réservé au Gérant)</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">💰</span>
+        <span>Tableau de bord financier exclusif</span>
+      </div>
+      <div class="card-step-body">
+        Le gérant est le seul à voir le <strong>Total Recette (€)</strong>, le <strong>nombre total de sandwichs vendus</strong>, et le <strong>panier moyen</strong>. Le personnel en cuisine n'a pas accès à ces données confidentielles.
+      </div>
+    </div>
+
+    <div class="section-title">2. Gestion des Ruptures de Stock en 1 Clic</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">🔴</span>
+        <span>Désactiver un sandwich ou une pâtisserie épuisée</span>
+      </div>
+      <div class="card-step-body">
+        Dans l'onglet <strong>"Gestion des Ruptures"</strong> ou via le bouton <strong>Paramètres ⚙️</strong>, cliquez sur un produit pour le passer en <strong>"✕ Épuisé"</strong>. Les clients ne pourront plus le commander, évitant ainsi toute déception ou litige en plein rush.
+      </div>
+    </div>
+
+    <div class="section-title">3. Pilotage de l'Affluence & Pause Rush</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">⏱️</span>
+        <span>Réglage du temps d'attente estimé</span>
+      </div>
+      <div class="card-step-body">
+        Basculez entre <strong>5m</strong>, <strong>10m</strong>, <strong>15m</strong> ou <strong>20m</strong> selon l'affluence du jour. Le délai s'ajuste immédiatement en tête de page chez tous les clients.<br>
+        En cas de surchauffe de la cuisine, le bouton <strong>"Pause"</strong> gèle temporairement la prise de commande.
+      </div>
+    </div>
+
+    <div class="section-title">4. Clôture de Fin de Service</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">📊</span>
+        <span>Archivage et remise à zéro</span>
+      </div>
+      <div class="card-step-body">
+        En fin de rush déjeuner, consultez le journal de caisse complet, puis cliquez sur <strong>"Clôturer le service"</strong> pour repartir avec un compteur à zéro pour le service suivant.
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Fiche Confidentielle • Réservée au Gérant de l'établissement
+    </div>
+  </div>
+
+  <!-- FICHE 2 : GUIDE RESTAURATEUR (CUISINE & COMPTOIR) -->
+  <div class="page-sheet">
+    <div class="doc-header">
+      <div>
+        <div class="doc-title">👨‍🍳 L'ami du Pain • Guide Restaurateur (Cuisine)</div>
+        <div style="font-size: 13px; color: #79665B;">Traitement ultra-rapide des commandes à une seule main</div>
+      </div>
+      <div class="doc-badge">Vue Cuisine</div>
+    </div>
+
+    <div class="section-title">1. Réception des Commandes</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">1</span>
+        <span>La fiche de commande apparaît instantanément</span>
+      </div>
+      <div class="card-step-body">
+        Chaque commande arrive avec son <strong>Numéro en grand (ex: #042)</strong> et le prénom du client.<br>
+        Le détail est affiché clairement : recette de sandwich, sauces choisies, et exclusions de crudités mises en avant en rouge (ex: <em>⚠️ SANS OIGNON</em>).
+      </div>
+    </div>
+
+    <div class="section-title">2. Préparation & Validation en 1 Clic</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">2</span>
+        <span>Dès que le sachet est prêt : 1 Seul Tap !</span>
+      </div>
+      <div class="card-step-body">
+        Appuyez sur le gros bouton vert <strong>"✅ PRÊTE ! (Alerter le client)"</strong>.<br>
+        L'écran du client s'allume en vert et vibre discrètement. Il s'avance immédiatement au comptoir pour récupérer sa commande.
+      </div>
+    </div>
+
+    <div class="section-title">3. Encaissement au Comptoir (Simple & Direct)</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">💶</span>
+        <span>Règlement sur place au retrait</span>
+      </div>
+      <div class="card-step-body">
+        Le montant exact à encaisser est affiché sur le badge (ex: <em>💶 À encaisser : 4,00 €</em>). Vous encaissez simplement en espèces ou par carte sur votre TPE habituel.
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <strong>✨ Zéro distraction pour l'équipe :</strong> La vue Restaurateur n'affiche aucun paramètre complexe ni aucun chiffre de recette globale pour vous permettre de vous concentrer à 100% sur la rapidité de préparation.
+    </div>
+
+    <div class="footer-note">
+      Fiche Plastifiable pour le plan de travail et le comptoir de préparation
+    </div>
+  </div>
+
+  <!-- FICHE 3 : GUIDE CLIENT -->
+  <div class="page-sheet">
+    <div class="doc-header">
+      <div>
+        <div class="doc-title">🥖 L'ami du Pain • Guide Express Client</div>
+        <div style="font-size: 13px; color: #79665B;">Commandez en 30 secondes sans faire la queue</div>
+      </div>
+      <div class="doc-badge" style="background: #5B8266;">Côté Client</div>
+    </div>
+
+    <div class="section-title">Comment ça marche ?</div>
+
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">1</span>
+        <span>Scannez le QR Code</span>
+      </div>
+      <div class="card-step-body">
+        Visez le QR code avec votre smartphone. La carte s'ouvre directement sans aucun téléchargement d'application et sans création de compte.
+      </div>
+    </div>
+
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">2</span>
+        <span>Composez votre commande</span>
+      </div>
+      <div class="card-step-body">
+        • Choisissez votre sandwich chaud ou froid (ex: <em>Tenders croustillants</em>).<br>
+        • Sélectionnez votre formule (avec boisson 33cl ou formule complète avec pâtisserie artisanale).<br>
+        • Choisissez vos sauces (jusqu'à 2 gratuites). Les crudités sont déjà toutes incluses, décochez ce que vous ne voulez pas en 1 tap.
+      </div>
+    </div>
+
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">3</span>
+        <span>Indiquez votre prénom</span>
+      </div>
+      <div class="card-step-body">
+        Tapez simplement votre prénom pour que nous puissions appeler votre numéro. Vous règlerez directement au comptoir lors du retrait (espèces ou CB).
+      </div>
+    </div>
+
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">4</span>
+        <span>Suivi en direct & Retrait</span>
+      </div>
+      <div class="card-step-body">
+        Votre écran affiche votre numéro personnel (ex: <strong>#042</strong>). Dès que c'est prêt, votre écran s'illumine en vert. Avancez au comptoir de retrait prioritaire !
+      </div>
+    </div>
+
+    <div class="tip-box" style="background: #fdfbf7; border-color: #C86D3B; color: #2C1810;">
+      <strong>🌟 Pourquoi commander en ligne ?</strong><br>
+      • Vous évitez 10 à 15 minutes d'attente debout en plein rush.<br>
+      • Votre sachet vous attend prêt au comptoir.<br>
+      • Règlement simple et habituel sur place en boutique.
+    </div>
+
+    <div class="footer-note">
+      Fiche d'information client • À afficher au comptoir ou en vitrine
+    </div>
+  </div>
+
+</body>
+</html>
