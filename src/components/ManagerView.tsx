@@ -320,7 +320,34 @@ export const ManagerView: React.FC<ManagerViewProps> = ({ onOpenConfig }) => {
         {/* Onglet Liens Directs & QR Code */}
         {activeTab === 'links' && (
           <div className="space-y-5">
-            {/* Carte QR Code Client */}
+            {/* Bannière Nom de Domaine Cible Commercial */}
+            <div className="p-4 rounded-3xl bg-linear-to-r from-amber-700 to-amber-900 text-white shadow-md relative overflow-hidden">
+              <div className="relative z-10">
+                <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/20 text-amber-100 inline-block mb-1">
+                  Nom de Domaine Proposé au Client
+                </span>
+                <h3 className="text-xl font-black tracking-tight">amidupain.fr</h3>
+                <p className="text-xs text-amber-100/90 mt-1 max-w-md">
+                  Une adresse courte, évidente et mémorisable pour les clients de la boulangerie. Simple à retenir, sans aucun sous-domaine technique.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3 text-xs font-mono">
+                  <div className="bg-black/25 px-2.5 py-1.5 rounded-xl border border-white/10">
+                    <span className="text-[10px] block opacity-75 font-sans font-bold">Client :</span>
+                    amidupain.fr
+                  </div>
+                  <div className="bg-black/25 px-2.5 py-1.5 rounded-xl border border-white/10">
+                    <span className="text-[10px] block opacity-75 font-sans font-bold">Cuisine :</span>
+                    amidupain.fr/cuisine
+                  </div>
+                  <div className="bg-black/25 px-2.5 py-1.5 rounded-xl border border-white/10">
+                    <span className="text-[10px] block opacity-75 font-sans font-bold">Gérant :</span>
+                    amidupain.fr/gerant
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Carte QR Code Client amidupain.fr */}
             <div
               className="p-5 rounded-3xl border text-center shadow-sm"
               style={{
@@ -332,30 +359,32 @@ export const ManagerView: React.FC<ManagerViewProps> = ({ onOpenConfig }) => {
                 <QrCode className="w-5 h-5 m-1.5" />
               </div>
               <h3 className="font-black text-sm text-amber-900 dark:text-amber-200">
-                QR Code Commande Client
+                QR Code Vitrine Officiel (amidupain.fr)
               </h3>
               <p className="text-xs mt-1 max-w-sm mx-auto" style={{ color: 'var(--color-text-muted)' }}>
-                Faites scanner ce QR Code avec l'appareil photo du smartphone du client pour ouvrir directement la prise de commande.
+                Ce QR Code est intégré sur l'affiche A4 de vitrine. Il redirige instantanément vers <strong>amidupain.fr</strong> sans aucun intermédiaire.
               </p>
 
               <div className="my-4 inline-block p-3 bg-white rounded-2xl border shadow-sm">
                 <img
-                  src="./qr_client.svg"
-                  alt="QR Code Commande Express"
+                  src="./qr_amidupain.svg"
+                  alt="QR Code amidupain.fr"
                   className="w-44 h-44 object-contain"
                 />
               </div>
 
-              <div className="text-xs font-mono break-all px-3 py-2 rounded-xl bg-black/5 dark:bg-white/5 border border-dashed text-amber-800 dark:text-amber-300">
-                {clientUrl}
+              <div className="text-xs font-mono break-all px-3 py-2 rounded-xl bg-black/5 dark:bg-white/5 border border-dashed text-amber-800 dark:text-amber-300 font-bold">
+                https://amidupain.fr
               </div>
             </div>
 
-            {/* Liste des 3 URLs par Rôle */}
+            {/* Liste des 3 URLs de Test Actuelles (GitHub Pages) */}
             <div className="space-y-3">
-              <h4 className="text-xs font-black uppercase tracking-wider text-amber-800 dark:text-amber-300">
-                Accès direct par rôle (À ouvrir sur vos appareils)
-              </h4>
+              <div className="flex items-center justify-between">
+                <h4 className="text-xs font-black uppercase tracking-wider text-amber-800 dark:text-amber-300">
+                  Accès de Test Immédiats (Sur vos smartphones aujourd'hui)
+                </h4>
+              </div>
 
               {/* Rôle 1: Client */}
               <div

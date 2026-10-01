@@ -49,8 +49,8 @@ Voici comment aborder le gérant avec respect, assurance et sincérité :
 
 ### Phase 2 : La démonstration en direct (60 secondes chrono sur son téléphone)
 1. Vous sortez votre smartphone ou vous lui montrez l'affiche A4 avec le QR code.
-2. Vous lui dites : *"Regardez, le client flashe ce code en arrivant ou depuis son bureau. Il choisit son sandwich en 3 clics, ses crudités sont déjà cochées, il tape juste son prénom."*
-3. Vous basculez sur l'écran **"Vue Restaurateur"** : *"Et vous, sur votre téléphone derrière le comptoir, vous recevez ça : #042 - Tenders chaud - Samouraï. Dès que c'est dans le sachet, vous touchez juste '✅ Prête !' et le client est averti."*
+2. Vous lui dites : *"Regardez, le client flashe ce code ou tape simplement **amidupain.fr** sur son téléphone. Il choisit son sandwich en 3 clics, ses crudités sont déjà cochées, il tape juste son prénom."*
+3. Vous basculez sur l'écran **"Vue Restaurateur"** : *"Et vous, sur votre téléphone ou tablette derrière le comptoir (`amidupain.fr/cuisine`), vous recevez ça : #042 - Tenders chaud - Samouraï. Dès que c'est dans le sachet, vous touchez juste '✅ Prête !' et le client est averti."*
 4. Vous lui montrez le sélecteur de thèmes : *"J'ai même préparé 4 styles de design différents (Artisan doré, Bistro moderne, Nature vert, Street food rouge). Vous choisissez celui qui colle le mieux à votre boutique."*
 
 ### Phase 3 : La gestion des craintes immédiates
@@ -68,13 +68,13 @@ Voici 3 formules claires au choix, sans clause léonine ni surprise :
 ### Formule A : "Clé en Main avec Test Gratuit" *(Recommandée)*
 * **Période d'essai** : **14 jours 100% gratuits**, sans engagement, avec l'affiche A4 imprimée et plastifiée offerte.
 * **Mise en service & Déploiement** : Si et seulement si le gérant est pleinement convaincu après 14 jours de rush :
-  * Forfait d'installation & configuration initiale : **190 €** (une seule fois).
-  * Maintenance, hébergement sécurisé & modifications de menu : **29 € / mois** (sans engagement de durée, résiliable à tout moment).
+  * Forfait d'installation, configuration initiale & réservation du nom de domaine **amidupain.fr** : **190 €** (une seule fois).
+  * Maintenance, hébergement sécurisé permanent (SSL HTTPS) & modifications de carte : **29 € / mois** (sans engagement de durée, résiliable à tout moment).
 * **Pourquoi c'est honnête** : 29 € représente la vente de seulement 4 à 5 formules midi dans tout le mois. Le système s'autofinance dès le 2ème jour.
 
 ### Formule B : "Achat Définitif en Pleine Propriété"
-* Le gérant achète l'application complète et le code : **490 €** une fois pour toutes.
-* Aucun abonnement mensuel. L'application est installée sur un hébergement gratuit permanent (Vercel / Cloudflare).
+* Le gérant achète l'application complète, le code source et le nom de domaine **amidupain.fr** : **490 €** une fois pour toutes.
+* Aucun abonnement mensuel. L'application est installée sur un hébergement cloud permanent et autonome.
 * Il est 100% propriétaire et indépendant.
 
 ---
@@ -82,11 +82,15 @@ Voici 3 formules claires au choix, sans clause léonine ni surprise :
 ## 5. Ce que vous lui livrez (Le Pack Complet Prêt à Vendre)
 
 1. **L'application Web PWA 100% au Comptoir** : Zéro paiement en ligne compliqué, zéro passerelle bancaire à payer. Le client commande en 3 clics et règle au comptoir lors du retrait.
-2. **La séparation claire des 3 Vues** :
-   * 📱 **Vue Client** : Menu fluide, personnalisation rapide des crudités et sauces, suivi en direct avec notification discrète.
+2. **Le Nom de Domaine Officiel `amidupain.fr`** :
+   * 📱 Client : `https://amidupain.fr`
+   * 👨‍🍳 Cuisine : `https://amidupain.fr/cuisine`
+   * 👑 Gérant : `https://amidupain.fr/gerant` (protégé par code PIN)
+3. **La séparation stricte et sécurisée des 3 Vues** :
+   * 📱 **Vue Client** : Menu fluide, personnalisation rapide des crudités et sauces, suivi en direct avec notification discrète. Aucun sélecteur de rôle visible.
    * 👨‍🍳 **Vue Restaurateur (Cuisine)** : Focus total sur la préparation, bouton 1-tap "✅ Prête !", aucun accès aux chiffres de caisse ni aux paramètres pour éviter toute distraction de l'équipe.
-   * 👑 **Vue Gérant (Direction)** : Accès exclusif au chiffre d'affaires, total des recettes, panier moyen, nombre de sandwichs vendus, journal de caisse et réglages boutique.
-3. **Le panneau de Configuration Gérant** : Gestion des ruptures en 1 clic (baguette, poulet, pâtisserie), temps d'attente estimé et pause d'urgence.
-4. **L'Affiche A4 Vitrine avec QR Code** prête à imprimer et à plastifier.
-5. **Les 3 fiches pratiques plastifiables** (Guide Gérant, Guide Restaurateur Cuisine, Guide Client).
-6. **Le choix immédiat parmi les 4 univers graphiques** (Artisan & Gourmand, Bistro Chic, Fresh & Nature, Street Food Express).
+   * 👑 **Vue Gérant (Direction)** : Accès exclusif protégé par code PIN au chiffre d'affaires, total des recettes, panier moyen, nombre de sandwichs vendus, journal de caisse et réglages boutique. Seul le gérant peut permuter entre les vues.
+4. **Le panneau de Configuration Gérant** : Gestion des ruptures en 1 clic (baguette, poulet, pâtisserie), temps d'attente estimé et pause d'urgence.
+5. **L'Affiche A4 Vitrine avec QR Code vectoriel `amidupain.fr`** prête à imprimer et à plastifier.
+6. **Les 3 fiches pratiques plastifiables** (Guide Gérant, Guide Restaurateur Cuisine, Guide Client).
+7. **Le choix immédiat parmi les 4 univers graphiques** (Artisan & Gourmand, Bistro Chic, Fresh & Nature, Street Food Express).
