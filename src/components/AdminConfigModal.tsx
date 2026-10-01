@@ -341,6 +341,27 @@ export const AdminConfigModal: React.FC<AdminConfigModalProps> = ({ onClose }) =
                 />
               </div>
 
+              <div>
+                <label className="text-xs font-bold uppercase tracking-wider block mb-1" style={{ color: 'var(--color-text-muted)' }}>
+                  Code PIN de Sécurité Gérant (4 à 6 chiffres)
+                </label>
+                <input
+                  type="text"
+                  maxLength={6}
+                  value={config.managerPin || '1234'}
+                  onChange={(e) => updateConfig({ managerPin: e.target.value.replace(/\D/g, '') })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border text-sm font-mono tracking-widest font-bold focus:ring-2 focus:ring-amber-500"
+                  style={{
+                    borderColor: 'var(--color-border)',
+                    backgroundColor: 'var(--color-bg)',
+                    color: 'var(--color-text)',
+                  }}
+                />
+                <span className="text-[10px] text-zinc-500 mt-1 block">
+                  Ce code protège l'accès à la caisse, aux recettes et au changement de rôle.
+                </span>
+              </div>
+
               <div className="p-3 rounded-2xl border flex items-center justify-between" style={{ borderColor: 'var(--color-border)' }}>
                 <div>
                   <div className="font-bold text-xs">Certification Viandes Halal</div>

@@ -71,4 +71,5 @@ export interface RestaurantConfig {
   activeTheme: ThemeType;
   announcementText: string;
   halalCertified: boolean;
+  managerPin?: string;
 }

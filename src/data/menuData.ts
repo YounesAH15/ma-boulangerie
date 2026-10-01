@@ -8,6 +8,7 @@ export const INITIAL_CONFIG: RestaurantConfig = {
   activeTheme: 'artisan',
   announcementText: "🥖 Rush du Midi : Vos sandwichs préparés à la minute dans notre pain artisanal croustillant !",
   halalCertified: true,
+  managerPin: '1234',
 };
 
 export const CRUDITES_LIST: Crudite[] = [
