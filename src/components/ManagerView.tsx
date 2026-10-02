@@ -15,6 +15,7 @@ import {
   Check,
   ExternalLink,
   Printer,
+  Zap,
 } from 'lucide-react';
 
 interface ManagerViewProps {
@@ -22,7 +23,15 @@ interface ManagerViewProps {
 }
 
 export const ManagerView: React.FC<ManagerViewProps> = ({ onOpenConfig }) => {
-  const { config, updateConfig, orders, products, toggleProductStock, resetDailySales } = useStore();
+  const {
+    config,
+    updateConfig,
+    orders,
+    products,
+    toggleProductStock,
+    resetDailySales,
+    simulateRushOrders,
+  } = useStore();
   const [activeTab, setActiveTab] = useState<'finance' | 'stock' | 'links'>('finance');
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
@@ -148,6 +157,55 @@ export const ManagerView: React.FC<ManagerViewProps> = ({ onOpenConfig }) => {
 
         {activeTab === 'finance' && (
           <div className="space-y-5">
+            {/* Outil de Simulation de Rush (Pour tester sur PC ou devant le gérant) */}
+            <div
+              className="p-4 rounded-3xl border shadow-sm space-y-2.5"
+              style={{
+                backgroundColor: 'rgba(var(--color-primary-rgb, 200, 109, 59), 0.06)',
+                borderColor: 'var(--color-primary)',
+              }}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="p-1.5 rounded-xl bg-amber-600 text-white">
+                    <Zap className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-black uppercase tracking-wider text-amber-900 dark:text-amber-200">
+                      Simulateur de Rush Déjeuner (Test PC & Démo)
+                    </h4>
+                    <p className="text-[11px]" style={{ color: 'var(--color-text-muted)' }}>
+                      Injecte 12 commandes réalistes (Tenders, Poulet Croque, Kefta, Thon...) pour tester le flux en direct.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <button
+                  type="button"
+                  onClick={simulateRushOrders}
+                  className="px-3.5 py-2 rounded-xl text-xs font-black text-white shadow-sm flex items-center gap-1.5 cursor-pointer hover:opacity-95 transition-all"
+                  style={{ backgroundColor: 'var(--color-primary)' }}
+                >
+                  <Zap className="w-3.5 h-3.5" />
+                  <span>⚡ Lancer un Rush (12 Commandes)</span>
+                </button>
+
+                {orders.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={resetDailySales}
+                    className="px-3 py-2 rounded-xl text-xs font-bold border hover:bg-red-50 text-red-700 dark:hover:bg-red-950/20 cursor-pointer flex items-center gap-1 transition-all"
+                    style={{ borderColor: 'var(--color-border)' }}
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    <span>Réinitialiser</span>
+                  </button>
+                )}
+              </div>
+            </div>
+
             {/* Blocs Métriques Financières (Exclusif Gérant) */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               <div

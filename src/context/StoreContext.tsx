@@ -13,6 +13,7 @@ interface StoreContextType {
   createOrder: (clientName: string, items: OrderItem[]) => Order;
   updateOrderStatus: (orderId: string, status: OrderStatus) => void;
   resetDailySales: () => void;
+  simulateRushOrders: () => void;
   cart: OrderItem[];
   addToCart: (item: OrderItem) => void;
   removeFromCart: (index: number) => void;
@@ -198,6 +199,293 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     broadcastChannel?.postMessage({ type: 'SYNC_ORDERS', payload: [] });
   };
 
+  const simulateRushOrders = () => {
+    const rushMockOrders: Order[] = [
+      {
+        id: `ord_sim_1`,
+        orderNumber: '#038',
+        clientName: 'Younès (Favori midi)',
+        items: [
+          {
+            id: 'item_1',
+            productId: 'tenders',
+            productName: 'Tenders Croustillants',
+            formulaType: 'drink',
+            selectedDrink: 'Coca-Cola Cherry 33cl',
+            selectedSauces: ['Samouraï', 'Algérienne'],
+            excludedCrudites: [],
+            selectedSupplements: [],
+            unitPrice: 5.00,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 5.00,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 14 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_2`,
+        orderNumber: '#039',
+        clientName: 'Karim',
+        items: [
+          {
+            id: 'item_2',
+            productId: 'poulet_croque',
+            productName: 'Poulet Croque',
+            formulaType: 'full',
+            selectedDrink: 'Oasis Tropical 33cl',
+            selectedPastry: 'Tartelette aux Pommes',
+            selectedSauces: ['Sauce Blanche'],
+            excludedCrudites: ['Oignons Frits', 'Oignons Frais'],
+            selectedSupplements: [],
+            unitPrice: 7.00,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 7.00,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 12 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_3`,
+        orderNumber: '#040',
+        clientName: 'Sarah',
+        items: [
+          {
+            id: 'item_3',
+            productId: 'thon',
+            productName: 'Thon Mayonnaise',
+            formulaType: 'single',
+            selectedSauces: ['Mayonnaise'],
+            excludedCrudites: ['Tomate'],
+            selectedSupplements: [],
+            unitPrice: 2.80,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 2.80,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 10 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_4`,
+        orderNumber: '#041',
+        clientName: 'Thomas',
+        items: [
+          {
+            id: 'item_4',
+            productId: 'mexicanos',
+            productName: 'Mexicanos',
+            formulaType: 'maxi',
+            selectedDrink: 'Sprite 33cl',
+            selectedSauces: ['Andalouse'],
+            excludedCrudites: [],
+            selectedSupplements: [{ name: 'Supplément Fromage', price: 0.50 }],
+            unitPrice: 6.80,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 6.80,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 9 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_5`,
+        orderNumber: '#042',
+        clientName: 'Léa',
+        items: [
+          {
+            id: 'item_5',
+            productId: 'dinde_marine',
+            productName: 'Dinde Mariné',
+            formulaType: 'drink',
+            selectedDrink: 'Eau Cristaline 50cl',
+            selectedSauces: ['Sans sauce'],
+            excludedCrudites: ['Oignons Frits', 'Olives'],
+            selectedSupplements: [],
+            unitPrice: 5.00,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 5.00,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 7 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_6`,
+        orderNumber: '#043',
+        clientName: 'Alexandre',
+        items: [
+          {
+            id: 'item_6',
+            productId: 'kefta',
+            productName: 'Kefta Épicé',
+            formulaType: 'full',
+            selectedDrink: 'Fanta Orange 33cl',
+            selectedPastry: 'Éclair au Chocolat',
+            selectedSauces: ['Sauce Blanche', 'Harissa'],
+            excludedCrudites: [],
+            selectedSupplements: [{ name: 'Supplément Fromage', price: 0.50 }],
+            unitPrice: 7.50,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 7.50,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 6 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_7`,
+        orderNumber: '#044',
+        clientName: 'Sofia',
+        items: [
+          {
+            id: 'item_7',
+            productId: 'crudites_feta',
+            productName: 'Crudités Féta',
+            formulaType: 'drink',
+            selectedDrink: 'Fuze Tea Pêche 33cl',
+            selectedSauces: ['Sauce Blanche'],
+            excludedCrudites: [],
+            selectedSupplements: [],
+            unitPrice: 3.80,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 3.80,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 5 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_8`,
+        orderNumber: '#045',
+        clientName: 'Mehdi',
+        items: [
+          {
+            id: 'item_8',
+            productId: 'cordon_bleu',
+            productName: 'Cordon Bleu',
+            formulaType: 'single',
+            selectedSauces: ['Algérienne', 'Samouraï'],
+            excludedCrudites: [],
+            selectedSupplements: [{ name: 'Supplément Fromage', price: 0.50 }],
+            unitPrice: 4.50,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 4.50,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 4 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_9`,
+        orderNumber: '#046',
+        clientName: 'Chloé',
+        items: [
+          {
+            id: 'item_9',
+            productId: 'poulet_roti',
+            productName: 'Poulet Rôti',
+            formulaType: 'full',
+            selectedDrink: 'Coca-Cola Zéro 33cl',
+            selectedPastry: 'Flan Pâtissier',
+            selectedSauces: ['Mayonnaise'],
+            excludedCrudites: ['Olives'],
+            selectedSupplements: [],
+            unitPrice: 5.80,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 5.80,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 3 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_10`,
+        orderNumber: '#047',
+        clientName: 'Julien',
+        items: [
+          {
+            id: 'item_10',
+            productId: 'fricadelle',
+            productName: 'Fricadelles',
+            formulaType: 'drink',
+            selectedDrink: 'Tropico 33cl',
+            selectedSauces: ['Américaine', 'Ketchup'],
+            excludedCrudites: [],
+            selectedSupplements: [],
+            unitPrice: 5.00,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 5.00,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 2 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_11`,
+        orderNumber: '#048',
+        clientName: 'Emma',
+        items: [
+          {
+            id: 'item_11',
+            productId: 'fromage',
+            productName: 'Fromage Emmental',
+            formulaType: 'single',
+            selectedSauces: ['Sans sauce'],
+            excludedCrudites: ['Oignons Frits', 'Oignons Frais', 'Olives'],
+            selectedSupplements: [],
+            unitPrice: 2.80,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 2.80,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now() - 1 * 60 * 1000,
+      },
+      {
+        id: `ord_sim_12`,
+        orderNumber: '#049',
+        clientName: 'Lucas',
+        items: [
+          {
+            id: 'item_12',
+            productId: 'nuggets',
+            productName: 'Nuggets Poulet',
+            formulaType: 'drink',
+            selectedDrink: 'Coca-Cola Original 33cl',
+            selectedSauces: ['Barbecue', 'Mayonnaise'],
+            excludedCrudites: [],
+            selectedSupplements: [],
+            unitPrice: 5.00,
+            quantity: 1,
+          },
+        ],
+        totalAmount: 5.00,
+        paymentMethod: 'counter',
+        status: 'in_progress',
+        createdAt: Date.now(),
+      },
+    ];
+
+    setOrders((prev) => {
+      const next = [...rushMockOrders, ...prev];
+      broadcastChannel?.postMessage({ type: 'SYNC_ORDERS', payload: next });
+      return next;
+    });
+  };
+
   const addToCart = (item: OrderItem) => {
     setCart((prev) => [...prev, item]);
   };
@@ -225,6 +513,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         createOrder,
         updateOrderStatus,
         resetDailySales,
+        simulateRushOrders,
         cart,
         addToCart,
         removeFromCart,
