@@ -325,6 +325,9 @@ export const ManagerView: React.FC<ManagerViewProps> = ({ onOpenConfig }) => {
                         <div className="flex items-center gap-2 font-bold">
                           <span className="text-amber-700">{ord.orderNumber}</span>
                           <span>{ord.clientName}</span>
+                          {ord.clientPhone && (
+                            <span className="text-[11px] font-normal text-zinc-500">({ord.clientPhone})</span>
+                          )}
                         </div>
                         <div className="text-[11px] mt-0.5" style={{ color: 'var(--color-text-muted)' }}>
                           {ord.items.map((i) => `${i.quantity}x ${i.productName}`).join(' + ')}

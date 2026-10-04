@@ -158,7 +158,7 @@ function MainApp() {
 
       {isPinModalOpen && (
         <ManagerPinModal
-          correctPin={config.managerPin || '1234'}
+          correctPin={config.managerPin || '1996'}
           onSuccess={handlePinSuccess}
           onCancel={handlePinCancel}
         />

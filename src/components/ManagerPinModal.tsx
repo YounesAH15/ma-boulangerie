@@ -135,7 +135,7 @@ export const ManagerPinModal: React.FC<ManagerPinModalProps> = ({
 
         <div className="mt-5 text-center">
           <span className="text-[11px] text-zinc-500 font-medium">
-            Code usine initial : <strong className="font-mono text-amber-700">1234</strong>
+            Code usine initial : <strong className="font-mono text-amber-700">{correctPin || '1996'}</strong>
           </span>
         </div>
       </div>

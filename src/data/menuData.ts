@@ -1,15 +1,12 @@
-import type { Product, Crudite, Sauce, Supplement, RestaurantConfig } from '../types';
+import type { Product, Crudite, Sauce, Supplement, RestaurantConfig, CategoryItem } from '../types';
 
-export const INITIAL_CONFIG: RestaurantConfig = {
-  name: "L'ami du Pain",
-  subtitle: "Boulangerie Artisanale & Sandwicherie Gourmande",
-  rushEstimatedMinutes: 10,
-  isRushPaused: false,
-  activeTheme: 'artisan',
-  announcementText: "🥖 Rush du Midi : Vos sandwichs préparés à la minute dans notre pain artisanal croustillant !",
-  halalCertified: true,
-  managerPin: '1234',
-};
+export const DEFAULT_CATEGORIES: CategoryItem[] = [
+  { id: 'chauds', name: 'Sandwichs Chauds', icon: '🔥' },
+  { id: 'froids', name: 'Sandwichs Froids', icon: '🥖' },
+  { id: 'boissons', name: 'Boissons Fraîches', icon: '🥤' },
+  { id: 'desserts', name: 'Pâtisseries & Desserts', icon: '🍰' },
+  { id: 'snacks', name: 'Snacks & Compléments', icon: '🍟' },
+];
 
 export const CRUDITES_LIST: Crudite[] = [
   { id: 'salade', name: 'Salade', defaultIncluded: true },
@@ -38,6 +35,27 @@ export const SUPPLEMENTS_LIST: Supplement[] = [
   { id: 'dinde', name: 'Supplément Jambon de Dinde', price: 1.00 },
   { id: 'viande', name: 'Supplément Viande', price: 2.00 },
 ];
+
+export const INITIAL_CONFIG: RestaurantConfig = {
+  name: "L'ami du Pain",
+  subtitle: "Boulangerie Artisanale & Sandwicherie Gourmande",
+  phone: "03 20 77 00 00",
+  storeAddress: "160 Rue Jules Lebleu, 59280 Armentières, France",
+  storeLat: 50.6845,
+  storeLng: 2.8656,
+  maxDistanceKm: 8, // ~15 min en voiture / circulation urbaine
+  geoRestrictionEnabled: true,
+  rushEstimatedMinutes: 10,
+  isRushPaused: false,
+  activeTheme: 'artisan',
+  announcementText: "🥖 Rush du Midi : Vos sandwichs préparés à la minute dans notre pain artisanal croustillant !",
+  halalCertified: true,
+  managerPin: '1996',
+  categories: DEFAULT_CATEGORIES,
+  crudites: CRUDITES_LIST,
+  sauces: SAUCES_LIST,
+  supplements: SUPPLEMENTS_LIST,
+};
 
 export const PRODUCTS_LIST: Product[] = [
   // --- SANDWICHS FROIDS (Base 2.80 / Boisson 3.80 / Complète 5.80 / Maxi 5.10) ---

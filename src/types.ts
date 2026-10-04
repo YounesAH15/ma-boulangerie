@@ -1,10 +1,16 @@
-export type CategoryType = 'formules' | 'froids' | 'chauds' | 'boissons' | 'desserts' | 'snacks';
+export type CategoryType = string;
 
 export type ThemeType = 'artisan' | 'bistro' | 'nature' | 'express';
 
 export type OrderStatus = 'in_progress' | 'ready' | 'completed' | 'cancelled';
 
 export type PaymentMethod = 'counter';
+
+export interface CategoryItem {
+  id: string;
+  name: string;
+  icon?: string;
+}
 
 export interface Crudite {
   id: string;
@@ -27,7 +33,7 @@ export interface Product {
   id: string;
   name: string;
   description: string;
-  category: 'froids' | 'chauds' | 'boissons' | 'desserts' | 'snacks';
+  category: string;
   priceSingle: number;
   priceDrink?: number; // Formule avec boisson 33cl
   priceFull?: number;  // Formule complète (+ boisson + pâtisserie)
@@ -55,6 +61,7 @@ export interface Order {
   id: string;
   orderNumber: string; // Ex: "#042"
   clientName: string;
+  clientPhone?: string; // Téléphone du client pour appel cuisine si besoin
   items: OrderItem[];
   totalAmount: number;
   paymentMethod: PaymentMethod;
@@ -66,10 +73,20 @@ export interface Order {
 export interface RestaurantConfig {
   name: string;
   subtitle: string;
+  phone: string;
+  storeAddress: string;
+  storeLat: number;
+  storeLng: number;
+  maxDistanceKm: number; // Rayon max de commande (défaut : 8 km = ~15 min)
+  geoRestrictionEnabled: boolean; // Activation/Désactivation de la restriction géographique
   rushEstimatedMinutes: number;
   isRushPaused: boolean;
   activeTheme: ThemeType;
   announcementText: string;
   halalCertified: boolean;
-  managerPin?: string;
+  managerPin: string; // Code PIN de direction (défaut : '1996')
+  categories: CategoryItem[];
+  crudites: Crudite[];
+  sauces: Sauce[];
+  supplements: Supplement[];
 }
