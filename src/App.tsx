@@ -10,16 +10,28 @@ import { ManagerPinModal } from './components/ManagerPinModal';
 const parseUrlView = (): AppViewMode => {
   if (typeof window === 'undefined') return 'client';
   const params = new URLSearchParams(window.location.search);
-  const viewParam = params.get('view') || params.get('role');
+  const viewParam = (params.get('view') || params.get('role') || '').toLowerCase();
   const hash = window.location.hash.replace('#', '').toLowerCase();
+  const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
 
-  const target = (viewParam || hash || '').toLowerCase();
-  if (target === 'merchant' || target === 'cuisine' || target === 'restaurateur') {
+  const isMerchant =
+    viewParam === 'merchant' || viewParam === 'cuisine' || viewParam === 'restaurateur' ||
+    hash === 'merchant' || hash === 'cuisine' || hash === 'restaurateur' ||
+    path.endsWith('/cuisine') || path.endsWith('/merchant') || path.endsWith('/restaurateur');
+
+  if (isMerchant) {
     return 'merchant';
   }
-  if (target === 'manager' || target === 'gerant' || target === 'admin') {
+
+  const isManager =
+    viewParam === 'manager' || viewParam === 'gerant' || viewParam === 'admin' ||
+    hash === 'manager' || hash === 'gerant' || hash === 'admin' ||
+    path.endsWith('/gerant') || path.endsWith('/manager') || path.endsWith('/admin');
+
+  if (isManager) {
     return 'manager';
   }
+
   return 'client';
 };
 
