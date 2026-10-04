@@ -52,11 +52,9 @@ export const ManagerView: React.FC<ManagerViewProps> = ({ onOpenConfig }) => {
     updateConfig({ isRushPaused: !config.isRushPaused });
   };
 
-  const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : 'https://younesah15.github.io/ma-boulangerie/';
-  const cleanBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
-  const clientUrl = `${cleanBase}?view=client`;
-  const merchantUrl = `${cleanBase}?view=cuisine`;
-  const managerUrl = `${cleanBase}?view=gerant`;
+  const clientUrl = 'https://amidupain.vercel.app/';
+  const merchantUrl = 'https://amidupain.vercel.app/cuisine';
+  const managerUrl = 'https://amidupain.vercel.app/gerant';
 
   const handleCopy = (text: string, key: string) => {
     navigator.clipboard.writeText(text);
@@ -381,34 +379,34 @@ export const ManagerView: React.FC<ManagerViewProps> = ({ onOpenConfig }) => {
         {/* Onglet Liens Directs & QR Code */}
         {activeTab === 'links' && (
           <div className="space-y-5">
-            {/* Bannière Nom de Domaine Cible Commercial */}
+            {/* Bannière Nom de Domaine Déployé */}
             <div className="p-4 rounded-3xl bg-linear-to-r from-amber-700 to-amber-900 text-white shadow-md relative overflow-hidden">
               <div className="relative z-10">
                 <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/20 text-amber-100 inline-block mb-1">
-                  Nom de Domaine Proposé au Client
+                  Adresse Officielle Déployée
                 </span>
-                <h3 className="text-xl font-black tracking-tight">amidupain.fr</h3>
+                <h3 className="text-xl font-black tracking-tight">amidupain.vercel.app</h3>
                 <p className="text-xs text-amber-100/90 mt-1 max-w-md">
-                  Une adresse courte, évidente et mémorisable pour les clients de la boulangerie. Simple à retenir, sans aucun sous-domaine technique.
+                  Adresse directe en ligne, rapide et sécurisée. Accessible immédiatement depuis n'importe quel smartphone sans installation.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3 text-xs font-mono">
                   <div className="bg-black/25 px-2.5 py-1.5 rounded-xl border border-white/10">
                     <span className="text-[10px] block opacity-75 font-sans font-bold">Client :</span>
-                    amidupain.fr
+                    amidupain.vercel.app
                   </div>
                   <div className="bg-black/25 px-2.5 py-1.5 rounded-xl border border-white/10">
                     <span className="text-[10px] block opacity-75 font-sans font-bold">Cuisine :</span>
-                    amidupain.fr/cuisine
+                    amidupain.vercel.app/cuisine
                   </div>
                   <div className="bg-black/25 px-2.5 py-1.5 rounded-xl border border-white/10">
                     <span className="text-[10px] block opacity-75 font-sans font-bold">Gérant :</span>
-                    amidupain.fr/gerant
+                    amidupain.vercel.app/gerant
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Carte QR Code Client amidupain.fr */}
+            {/* Carte QR Code Client amidupain.vercel.app */}
             <div
               className="p-5 rounded-3xl border text-center shadow-sm"
               style={{
@@ -420,30 +418,30 @@ export const ManagerView: React.FC<ManagerViewProps> = ({ onOpenConfig }) => {
                 <QrCode className="w-5 h-5 m-1.5" />
               </div>
               <h3 className="font-black text-sm text-amber-900 dark:text-amber-200">
-                QR Code Vitrine Officiel (amidupain.fr)
+                QR Code Vitrine Officiel (amidupain.vercel.app)
               </h3>
               <p className="text-xs mt-1 max-w-sm mx-auto" style={{ color: 'var(--color-text-muted)' }}>
-                Ce QR Code est intégré sur l'affiche A4 de vitrine. Il redirige instantanément vers <strong>amidupain.fr</strong> sans aucun intermédiaire.
+                Ce QR Code est intégré sur l'affiche A4 de vitrine. Il redirige <strong>exclusivement vers la vue Client</strong> pour la prise de commande.
               </p>
 
               <div className="my-4 inline-block p-3 bg-white rounded-2xl border shadow-sm">
                 <img
-                  src="./qr_amidupain.svg"
-                  alt="QR Code amidupain.fr"
+                  src="./qr_client.svg"
+                  alt="QR Code amidupain.vercel.app"
                   className="w-44 h-44 object-contain"
                 />
               </div>
 
               <div className="text-xs font-mono break-all px-3 py-2 rounded-xl bg-black/5 dark:bg-white/5 border border-dashed text-amber-800 dark:text-amber-300 font-bold">
-                https://amidupain.fr
+                https://amidupain.vercel.app
               </div>
             </div>
 
-            {/* Liste des 3 URLs de Test Actuelles (GitHub Pages) */}
+            {/* Liste des 3 URLs Directes */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <h4 className="text-xs font-black uppercase tracking-wider text-amber-800 dark:text-amber-300">
-                  Accès de Test Immédiats (Sur vos smartphones aujourd'hui)
+                  Accès Directs par Profil (Smartphone & PC)
                 </h4>
               </div>
 

@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Guide d'Utilisation Imprimable - Client, Restaurateur & Gérant</title>
+  <title>Guide Pratique Imprimable - Gérant, Cuisine & Client | L'ami du Pain</title>
   <style>
     @page {
       size: A4 portrait;
-      margin: 12mm;
+      margin: 10mm;
     }
     * {
       box-sizing: border-box;
@@ -24,7 +24,7 @@
       min-height: 297mm;
       background: #fff;
       margin: 0 auto 30px auto;
-      padding: 16mm 18mm;
+      padding: 14mm 16mm;
       border: 1px solid #dcd3c7;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       position: relative;
@@ -64,55 +64,55 @@
     }
     .doc-header {
       border-bottom: 2px solid #C86D3B;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
     }
     .doc-title {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 900;
       color: #2C1810;
     }
     .doc-badge {
       background: #C86D3B;
       color: white;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
       padding: 4px 12px;
       border-radius: 12px;
     }
     .section-title {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 800;
       color: #C86D3B;
-      margin: 16px 0 8px 0;
+      margin: 12px 0 6px 0;
       border-left: 4px solid #C86D3B;
       padding-left: 8px;
     }
     .card-step {
       background: #fdfbf7;
       border: 1px solid #ebdccc;
-      border-radius: 12px;
-      padding: 12px 14px;
-      margin-bottom: 10px;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
     }
     .card-step-header {
       display: flex;
       align-items: center;
       gap: 8px;
       font-weight: 800;
-      font-size: 14px;
-      margin-bottom: 4px;
+      font-size: 13px;
+      margin-bottom: 3px;
     }
     .step-badge {
       background: #2C1810;
       color: white;
-      font-size: 11px;
-      width: 20px;
-      height: 20px;
+      font-size: 10px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -120,30 +120,36 @@
       font-weight: bold;
     }
     .card-step-body {
-      font-size: 12px;
-      line-height: 1.45;
+      font-size: 11.5px;
+      line-height: 1.4;
       color: #55443a;
     }
     .tip-box {
       background: #eaf5ee;
       border: 1px solid #b7dfc3;
       color: #1b6837;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 12px;
-      margin-top: 14px;
-      line-height: 1.4;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      margin-top: 10px;
+      line-height: 1.35;
     }
     .footer-note {
       position: absolute;
-      bottom: 12mm;
-      left: 18mm;
-      right: 18mm;
+      bottom: 10mm;
+      left: 16mm;
+      right: 16mm;
       text-align: center;
-      font-size: 11px;
+      font-size: 10.5px;
       color: #998579;
       border-top: 1px solid #ebdccc;
-      padding-top: 8px;
+      padding-top: 6px;
+    }
+    .url-highlight {
+      color: #C86D3B;
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -153,183 +159,212 @@
     <button class="btn-print" onclick="window.print()">🖨️ Imprimer les 3 Fiches Pratiques (A4)</button>
   </div>
 
-  <!-- FICHE 1 : GUIDE GÉRANT (DIRECTION & CAISSE) -->
+  <!-- ==================== FICHE 1 : GUIDE GÉRANT ==================== -->
   <div class="page-sheet">
     <div class="doc-header">
       <div>
-        <div class="doc-title">👑 L'ami du Pain • Guide Gérant</div>
-        <div style="font-size: 13px; color: #79665B;">Pilotage de la caisse, recettes, ruptures • Accès : <strong style="color:#C86D3B">amidupain.fr/gerant</strong> (PIN: 1234)</div>
+        <div class="doc-title">👑 L'ami du Pain • Guide Gérant & Caisse</div>
+        <div style="font-size: 12px; color: #79665B;">
+          Pilotage caisse, recettes, catalogue & périmètre • URL : <span class="url-highlight">amidupain.vercel.app/gerant</span> • PIN : <strong>1996</strong>
+        </div>
       </div>
       <div class="doc-badge" style="background: #2C1810;">Espace Gérant</div>
     </div>
 
-    <div class="section-title">1. Suivi des Chiffres de Vente (Réservé au Gérant)</div>
+    <div class="section-title">1. Chiffres Financiers & Recettes (Strictement Confidentiel)</div>
     <div class="card-step">
       <div class="card-step-header">
         <span class="step-badge">💰</span>
         <span>Tableau de bord financier exclusif</span>
       </div>
       <div class="card-step-body">
-        Le gérant est le seul à voir le <strong>Total Recette (€)</strong>, le <strong>nombre total de sandwichs vendus</strong>, et le <strong>panier moyen</strong>. Le personnel en cuisine n'a pas accès à ces données confidentielles.
+        Le gérant est le seul à voir le <strong>Total Recette (€)</strong>, le <strong>nombre de sandwichs vendus</strong> et le <strong>panier moyen</strong>. La vue cuisine et les clients n'y ont aucun accès. L'accès direct à <span class="url-highlight">amidupain.vercel.app/gerant</span> exige obligatoirement le <strong>Code PIN (1996)</strong>.
       </div>
     </div>
 
-    <div class="section-title">2. Gestion des Ruptures de Stock en 1 Clic</div>
+    <div class="section-title">2. Ajout Express de Nouveaux Produits en 15 Secondes</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">⚡</span>
+        <span>Mise en vente instantanée</span>
+      </div>
+      <div class="card-step-body">
+        Dans <strong>⚙️ Configuration &gt; Produits & Menus</strong>, ajoutez n'importe quelle nouveauté (Nom, Catégorie, Prix seul, Prix formule boisson, Complète). En 1 clic, l'article est actif et visible chez tous les clients avec le système de défilement infini (*infinite scrolling*).
+      </div>
+    </div>
+
+    <div class="section-title">3. Personnalisation Totale : Catégories, Crudités & Sauces</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">🏷️</span>
+        <span>Adaptation sur-mesure de votre carte</span>
+      </div>
+      <div class="card-step-body">
+        • <strong>Catégories</strong> : Créez de nouveaux rayons en tapant leur nom et leur emoji (ex: <em>🍕 Pizzas</em>, <em>🥐 Viennoiseries</em>).<br>
+        • <strong>Crudités</strong> : Ajoutez des ingrédients et cochez <em>"Inclus par défaut"</em> ou optionnel.<br>
+        • <strong>Sauces & Suppléments</strong> : Ajoutez toutes vos sauces et extras avec leur prix (ex: <em>Cheddar fondu +0.80 €</em>).
+      </div>
+    </div>
+
+    <div class="section-title">4. Périmètre Géographique 15 min (160 Rue Jules Lebleu, Armentières)</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">📍</span>
+        <span>Protection contre le gaspillage alimentaire & qualité garantie</span>
+      </div>
+      <div class="card-step-body">
+        L'application calcule la distance du client en direct. S'il est situé à plus de 15 minutes (~8 km), la commande est bloquée avec un message d'explication. Vous pouvez ajuster le rayon ou désactiver la restriction en 1 clic dans l'onglet <strong>Géoloc 15 min</strong>.
+      </div>
+    </div>
+
+    <div class="section-title">5. Ruptures de Stock, Délais Rush & Clôture de Service</div>
     <div class="card-step">
       <div class="card-step-header">
         <span class="step-badge">🔴</span>
-        <span>Désactiver un sandwich ou une pâtisserie épuisée</span>
+        <span>Gestion opérationnelle du rush</span>
       </div>
       <div class="card-step-body">
-        Dans l'onglet <strong>"Gestion des Ruptures"</strong> ou via le bouton <strong>Paramètres ⚙️</strong>, cliquez sur un produit pour le passer en <strong>"✕ Épuisé"</strong>. Les clients ne pourront plus le commander, évitant ainsi toute déception ou litige en plein rush.
-      </div>
-    </div>
-
-    <div class="section-title">3. Pilotage de l'Affluence & Pause Rush</div>
-    <div class="card-step">
-      <div class="card-step-header">
-        <span class="step-badge">⏱️</span>
-        <span>Réglage du temps d'attente estimé</span>
-      </div>
-      <div class="card-step-body">
-        Basculez entre <strong>5m</strong>, <strong>10m</strong>, <strong>15m</strong> ou <strong>20m</strong> selon l'affluence du jour. Le délai s'ajuste immédiatement en tête de page chez tous les clients.<br>
-        En cas de surchauffe de la cuisine, le bouton <strong>"Pause"</strong> gèle temporairement la prise de commande.
-      </div>
-    </div>
-
-    <div class="section-title">4. Clôture de Fin de Service</div>
-    <div class="card-step">
-      <div class="card-step-header">
-        <span class="step-badge">📊</span>
-        <span>Archivage et remise à zéro</span>
-      </div>
-      <div class="card-step-body">
-        En fin de rush déjeuner, consultez le journal de caisse complet, puis cliquez sur <strong>"Clôturer le service"</strong> pour repartir avec un compteur à zéro pour le service suivant.
+        • <strong>Ruptures</strong> : Basculez un produit en <em>"✕ Épuisé"</em> en 1 seconde en cas de rupture de pain ou d'ingrédient.<br>
+        • <strong>Attente</strong> : Réglez le délai estimé affiché aux clients (5, 10, 15, 20 ou 30 min) ou activez la <strong>Pause d'urgence</strong>.<br>
+        • <strong>Clôture</strong> : En fin de service, cliquez sur <em>"Clôturer le service"</em> pour archiver et repartir à zéro.
       </div>
     </div>
 
     <div class="footer-note">
-      Fiche Confidentielle • Réservée au Gérant de l'établissement
+      Fiche Confidentielle • Réservée au Gérant de l'établissement • Code PIN d'accès : 1996
     </div>
   </div>
 
-  <!-- FICHE 2 : GUIDE RESTAURATEUR (CUISINE & COMPTOIR) -->
+  <!-- ==================== FICHE 2 : GUIDE CUISINE / RESTAURATEUR ==================== -->
   <div class="page-sheet">
     <div class="doc-header">
       <div>
-        <div class="doc-title">👨‍🍳 L'ami du Pain • Guide Restaurateur (Cuisine)</div>
-        <div style="font-size: 13px; color: #79665B;">Traitement express des commandes • Accès : <strong style="color:#C86D3B">amidupain.fr/cuisine</strong></div>
+        <div class="doc-title">👨‍🍳 L'ami du Pain • Guide Cuisine & Comptoir</div>
+        <div style="font-size: 12px; color: #79665B;">
+          Traitement des commandes & préparation minute • URL : <span class="url-highlight">amidupain.vercel.app/cuisine</span>
+        </div>
       </div>
       <div class="doc-badge">Vue Cuisine</div>
     </div>
 
-    <div class="section-title">1. Réception des Commandes</div>
+    <div class="section-title">1. Réception des Commandes en Temps Réel</div>
     <div class="card-step">
       <div class="card-step-header">
         <span class="step-badge">1</span>
-        <span>La fiche de commande apparaît instantanément</span>
+        <span>Ticket grand format instantané</span>
       </div>
       <div class="card-step-body">
-        Chaque commande arrive avec son <strong>Numéro en grand (ex: #042)</strong> et le prénom du client.<br>
-        Le détail est affiché clairement : recette de sandwich, sauces choisies, et exclusions de crudités mises en avant en rouge (ex: <em>⚠️ SANS OIGNON</em>).
+        Chaque commande arrive avec son <strong>Numéro (#042)</strong> et le <strong>Prénom du client</strong>.<br>
+        Le détail des sauces et des exclusions d'ingrédients est immédiatement lisible (ex: <em>⚠️ SANS OIGNON</em> mis en surbrillance rouge).
       </div>
     </div>
 
-    <div class="section-title">2. Préparation & Validation en 1 Clic</div>
+    <div class="section-title">2. Bouton d'Appel Direct du Client (Téléphone portable)</div>
     <div class="card-step">
       <div class="card-step-header">
-        <span class="step-badge">2</span>
-        <span>Dès que le sachet est prêt : 1 Seul Tap !</span>
+        <span class="step-badge">📞</span>
+        <span>Contact client en 1 clic</span>
       </div>
       <div class="card-step-body">
-        Appuyez sur le gros bouton vert <strong>"✅ PRÊTE ! (Alerter le client)"</strong>.<br>
-        L'écran du client s'allume en vert et vibre discrètement. Il s'avance immédiatement au comptoir pour récupérer sa commande.
+        Chaque ticket affiche le numéro de téléphone renseigné par le client lors de sa commande avec un bouton <strong>📞 Appeler client</strong>. Vous pouvez le joindre directement pour toute précision sur sa recette ou le prévenir d'un imprévu.
       </div>
     </div>
 
-    <div class="section-title">3. Encaissement au Comptoir (Simple & Direct)</div>
+    <div class="section-title">3. Validation « ✅ PRÊTE ! » en 1 Clic</div>
+    <div class="card-step">
+      <div class="card-step-header">
+        <span class="step-badge">✅</span>
+        <span>Alerte instantanée sur le téléphone du client</span>
+      </div>
+      <div class="card-step-body">
+        Dès que le sachet est préparé, cliquez sur le bouton vert <strong>"✅ PRÊTE ! (Alerter le client)"</strong>.<br>
+        L'écran du smartphone du client s'allume en vert et vibre pour l'inviter à s'avancer au comptoir.
+      </div>
+    </div>
+
+    <div class="section-title">4. Encaissement au Comptoir (100% sur place)</div>
     <div class="card-step">
       <div class="card-step-header">
         <span class="step-badge">💶</span>
-        <span>Règlement sur place au retrait</span>
+        <span>Zéro paiement en ligne • Encaissement habituel</span>
       </div>
       <div class="card-step-body">
-        Le montant exact à encaisser est affiché sur le badge (ex: <em>💶 À encaisser : 4,00 €</em>). Vous encaissez simplement en espèces ou par carte sur votre TPE habituel.
+        Le montant à encaisser est affiché sur le badge du ticket (ex: <em>💶 À encaisser : 4,00 €</em>). Vous encaissez en Espèces ou Carte Bancaire sur votre TPE au moment de remettre la commande.
       </div>
     </div>
 
     <div class="tip-box">
-      <strong>✨ Zéro distraction pour l'équipe :</strong> La vue Restaurateur n'affiche aucun paramètre complexe ni aucun chiffre de recette globale pour vous permettre de vous concentrer à 100% sur la rapidité de préparation.
+      <strong>✨ Simplicité maximale pour l'équipe :</strong> La vue Cuisine ne contient aucun menu de configuration ni aucun chiffre de recette. Tout est pensé pour aller vite et servir des sandwichs chauds sans aucune distraction.
     </div>
 
     <div class="footer-note">
-      Fiche Plastifiable pour le plan de travail et le comptoir de préparation
+      Fiche Plastifiable pour le plan de travail et le poste d'emballage • L'ami du Pain
     </div>
   </div>
 
-  <!-- FICHE 3 : GUIDE CLIENT -->
+  <!-- ==================== FICHE 3 : GUIDE CLIENT ==================== -->
   <div class="page-sheet">
     <div class="doc-header">
       <div>
-        <div class="doc-title">🥖 L'ami du Pain • Guide Express Client</div>
-        <div style="font-size: 13px; color: #79665B;">Commandez en 30 secondes sans faire la queue • <strong style="color:#C86D3B">amidupain.fr</strong></div>
+        <div class="doc-title">🥖 L'ami du Pain • Guide Prise de Commande Client</div>
+        <div style="font-size: 12px; color: #79665B;">
+          Commandez en 30 secondes sans attente • URL : <span class="url-highlight">amidupain.vercel.app</span>
+        </div>
       </div>
       <div class="doc-badge" style="background: #5B8266;">Côté Client</div>
     </div>
 
-    <div class="section-title">Comment ça marche ?</div>
+    <div class="section-title">Comment commander en 4 étapes simples ?</div>
 
     <div class="card-step">
       <div class="card-step-header">
         <span class="step-badge">1</span>
-        <span>Scannez le QR Code ou rendez-vous sur amidupain.fr</span>
+        <span>Flashez le QR Code ou accédez à amidupain.vercel.app</span>
       </div>
       <div class="card-step-body">
-        Visez le QR code ou tapez <strong>amidupain.fr</strong> sur votre smartphone. La carte s'ouvre directement sans aucun téléchargement d'application et sans création de compte.
+        Pointez l'appareil photo de votre smartphone vers le QR code affiché en vitrine ou tapez <strong>amidupain.vercel.app</strong> dans votre navigateur. <strong>Aucun téléchargement d'application</strong> et <strong>aucun compte requis</strong>.
       </div>
     </div>
 
     <div class="card-step">
       <div class="card-step-header">
         <span class="step-badge">2</span>
-        <span>Composez votre commande</span>
+        <span>Validation de proximité (Rayon 15 minutes)</span>
       </div>
       <div class="card-step-body">
-        • Choisissez votre sandwich chaud ou froid (ex: <em>Tenders croustillants</em>).<br>
-        • Sélectionnez votre formule (avec boisson 33cl ou formule complète avec pâtisserie artisanale).<br>
-        • Choisissez vos sauces (jusqu'à 2 gratuites). Les crudités sont déjà toutes incluses, décochez ce que vous ne voulez pas en 1 tap.
+        Pour garantir que votre sandwich sorte du four ou du toaster parfaitement chaud et croustillant lors de votre arrivée, notre système vérifie que vous êtes à moins de 15 min de la boulangerie (160 Rue Jules Lebleu, Armentières).
       </div>
     </div>
 
     <div class="card-step">
       <div class="card-step-header">
         <span class="step-badge">3</span>
-        <span>Indiquez votre prénom</span>
+        <span>Composez votre formule sur-mesure</span>
       </div>
       <div class="card-step-body">
-        Tapez simplement votre prénom pour que nous puissions appeler votre numéro. Vous règlerez directement au comptoir lors du retrait (espèces ou CB).
+        Défilez le menu à volonté (*défilement infini*). Choisissez votre sandwich (chaud ou froid), votre formule (avec boisson fraîche 33cl ou formule complète avec pâtisserie), vos sauces préférées et retirez les crudités non désirées en 1 clic.
       </div>
     </div>
 
     <div class="card-step">
       <div class="card-step-header">
         <span class="step-badge">4</span>
-        <span>Suivi en direct & Retrait</span>
+        <span>Prénom, Téléphone & Retrait direct</span>
       </div>
       <div class="card-step-body">
-        Votre écran affiche votre numéro personnel (ex: <strong>#042</strong>). Dès que c'est prêt, votre écran s'illumine en vert. Avancez au comptoir de retrait prioritaire !
+        Indiquez votre prénom et votre numéro de téléphone (afin que l'équipe puisse vous avertir en cas de besoin). Vous recevez votre numéro de commande (ex: <strong>#042</strong>). Dès qu'elle est prête, votre écran passe au vert : venez retirer votre sachet et réglez au comptoir (espèces ou CB) !
       </div>
     </div>
 
     <div class="tip-box" style="background: #fdfbf7; border-color: #C86D3B; color: #2C1810;">
-      <strong>🌟 Pourquoi commander en ligne ?</strong><br>
-      • Vous évitez 10 à 15 minutes d'attente debout en plein rush.<br>
-      • Votre sachet vous attend prêt au comptoir.<br>
-      • Règlement simple et habituel sur place en boutique.
+      <strong>🌟 Vos avantages en commandant sur amidupain.vercel.app :</strong><br>
+      • Vous évitez les 10 à 15 minutes de file d'attente piétonne en heure de pointe.<br>
+      • Votre commande est préparée avec soin et vous attend toute prête au comptoir.<br>
+      • Paiement sur place lors du retrait, sans aucune obligation de carte bancaire en ligne.
     </div>
 
     <div class="footer-note">
-      Fiche d'information client • À afficher au comptoir ou en vitrine
+      Fiche d'information client • À afficher au comptoir ou en vitrine • amidupain.vercel.app
     </div>
   </div>
 
