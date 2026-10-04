@@ -1,0 +1,19 @@
+{
+  "name": "L'ami du Pain - Armentières",
+  "short_name": "L'ami du Pain",
+  "description": "Boulangerie Artisanale & Sandwicherie Gourmande - Armentières",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FDFBF7",
+  "theme_color": "#C86D3B",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/pwa-icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
